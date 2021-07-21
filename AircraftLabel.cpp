@@ -58,7 +58,7 @@ void AircraftLabel::update() {
 
 	char alt[10] = "";
     if (metric) {
-        snprintf(alt,10," %dm", static_cast<int>(p->altitude / 3.2828)); 
+        snprintf(alt,10," %dft", static_cast<int>(p->altitude * 1)); 
     } else {
         snprintf(alt,10," %d'", p->altitude); 
     }
@@ -67,7 +67,7 @@ void AircraftLabel::update() {
 
     char speed[10] = "";
     if (metric) {
-        snprintf(speed,10," %dkm/h", static_cast<int>(p->speed * 1.852));
+        snprintf(speed,10," %dkts", static_cast<int>(p->speed / 1.151));
     } else {
         snprintf(speed,10," %dmph", p->speed);
     }
